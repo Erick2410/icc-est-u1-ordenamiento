@@ -1,8 +1,8 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        int [] original = { 5, 3, 4, 1, 2};
+        int [] original = { 5, 6, 4, 1, 2, 3 };
         int [] b = original.clone();
-        int [] c = original;
+        int [] c = original.clone();
         
         // USAR EL METODO DEL ARCHIVO(clase) BUBBLE
         // INSTANCIAR EL ARCHIVO BUBBLE
@@ -12,6 +12,15 @@ public class App {
         printArreglo(b);
         buuble.sort(b);
         printArreglo(b);
+
+        // USAR EL METODO DEL ARCHIVO(clase) SELECTION
+        // INSTANCIAR EL ARCHIVO SELECTION
+        Selection selection = new Selection();
+        // Ejecutar codigo del archivo selection uso la instancia
+        printArreglo(c);
+        selection.sort(c);
+        printArreglo(c);
+        
 
     }
     
