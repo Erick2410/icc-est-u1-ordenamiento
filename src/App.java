@@ -3,6 +3,9 @@ public class App {
         int [] original = { 5, 6, 4, 1, 2, 3 };
         int [] b = original.clone();
         int [] c = original.clone();
+        int [] d = original.clone();
+        int [] e = original.clone();
+        int [] a = original;
         
         // USAR EL METODO DEL ARCHIVO(clase) BUBBLE
         // INSTANCIAR EL ARCHIVO BUBBLE
@@ -21,6 +24,18 @@ public class App {
         selection.sort(c);
         printArreglo(c);
         
+        // Instanciar Insertion
+        //
+        System.out.println("\n\n---Selection Sort---");
+        InsertionSort insertion = new InsertionSort();
+        System.out.println("ORIGINAL");
+        printArreglo(d);
+        insertion.sort(d);
+        System.out.println("ORDENADO ASCENDENTE");
+        printArreglo(d);
+        System.out.println("ORDENADO DESCENDENTE");
+        insertion.sort(e);
+        printArreglo(e);
 
     }
     
@@ -29,4 +44,5 @@ public class App {
             System.out.print(arr[i] + " - ");
         System.out.println();
     }
+
 }
