@@ -26,17 +26,20 @@ public class App {
         
         // Instanciar Insertion
         //
-        System.out.println("\n\n---Selection Sort---");
+        System.out.println("\n\n---Insertion Sort---");
         InsertionSort insertion = new InsertionSort();
         System.out.println("ORIGINAL");
         printArreglo(d);
         insertion.sort(d);
         System.out.println("ORDENADO ASCENDENTE");
         printArreglo(d);
-        System.out.println("ORDENADO DESCENDENTE");
-        insertion.sort(e);
-        printArreglo(e);
 
+        System.out.println("ORIGINAL");
+        printArreglo(e);
+        insertion.sort1(e);
+        System.out.println("ORDENADO DESCENDENTE");
+        printArreglo(e);
+       
     }
     
     public static void printArreglo(int[] arr) {
