@@ -32,6 +32,7 @@ public class Bubble {
 
         System.out.println("Cambios: " + cambios);
         System.out.println("Comparaciones: " + comparaciones);
+        
         return arreglo;
     }
     
