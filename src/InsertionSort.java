@@ -37,6 +37,7 @@ public class InsertionSort {
             System.out.println("cambio " + valorDesplazado + "<->" + key);
         } else {
             System.out.println("sin cambios");
+            
         }
     }
     System.out.println("Cambios: " + cambios);
