@@ -1,3 +1,5 @@
+import models.Estudiante;
+
 public class Bubble {
 
     public int[] sort(int[] arreglo) {
@@ -35,5 +37,21 @@ public class Bubble {
         
         return arreglo;
     }
-    
+    public void sortEstudiantes(Estudiante[] estudiantes){
+        for(int i = 0; i < estudiantes.length; i++){
+           boolean cambio = false;
+           for(int j = 0; j < estudiantes.length - i - 1; j++) {
+            if (estudiantes[j].getNota() > estudiantes[j + 1].getNota()) {
+
+                Estudiante aux = estudiantes[j];
+                estudiantes[j] = estudiantes[j + 1];
+                estudiantes[j + 1] = aux;
+                cambio = true; 
+            }
+        }
+        if (!cambio)
+            break;     
+    }
+  }
 }
+
