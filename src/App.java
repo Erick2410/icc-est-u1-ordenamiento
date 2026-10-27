@@ -1,5 +1,7 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 import models.Estudiante;
 
@@ -8,20 +10,74 @@ public class App {
         runEjemplosPrimitivos() ;
         runEjemplosObjetos() ;
         runComparators();
+
+
+        runComparatorsObj();
+        runComparatorsObj2();
+
     }
     
+    private static void runComparatorsObj2() {
+        Estudiante e1 = new Estudiante("Juan",10);
+        Estudiante[] estudiantes = {e1,
+             new Estudiante("Pedro",6.8),
+             new Estudiante("Maria",7.0),
+             new Estudiante("Diego", 3.5)
+
+        };
+
+        Comparator.naturalOrder();
+        Comparator.reverseOrder();
+        Comparator<Estudiante> compNota = Comparator.comparingDouble(e -> e.getNota());
+
+        Arrays.sort(estudiantes, compNota);
+        System.out.println(Arrays.toString(estudiantes));
+
+
+
+
+
+
+        List<Estudiante> estudiantesLista = new ArrayList<>(List.of(
+             new Estudiante("Pedro",6.8),
+             new Estudiante("Maria",7.0),
+             new Estudiante("Diego", 3.5)));
+
+             //Ordenar por la nota
+             estudiantesLista.sort(compNota);
+            
+        
+
+    }
+
+    private static void runComparatorsObj() {
+        List<Integer> numeros = new ArrayList<>(List.of(5, 6, 4, 1, 2, 3));
+
+        // Orden de menor a mayor
+        numeros.sort(null);
+        numeros.sort(Comparator.naturalOrder());
+
+        System.out.println(numeros);
+        //Ordenar de mayor a menor
+        numeros.sort(Comparator.reverseOrder());
+        System.out.println(numeros);
+
+
+
+    }
+
     private static void runComparators() {
       Integer[] original = { 5, 6, 4, 1, 2, 3 };
       // Array.sort ordena arreglos por su orden natural
       Arrays.sort(original);
       for(int i = 0; i < original.length; i ++){
-        System.err.println(original[i]);
+        System.out.println(original[i]);
 
       }
 
       Arrays.sort(original, Comparator.reverseOrder());
       for(int i = 0; i < original.length; i ++){
-        System.err.println(original[i]);
+        System.out.println(original[i]);
 
       }
 
@@ -86,6 +142,6 @@ public class App {
         for (int i = 0; i < estudiantes.length; i++)
             System.out.print(estudiantes[i] + " - ");
         System.out.println();
-        
+
     }
 }
