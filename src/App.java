@@ -7,13 +7,15 @@ import models.Estudiante;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        runEjemplosPrimitivos() ;
-        runEjemplosObjetos() ;
-        runComparators();
+        //runEjemplosPrimitivos() ;
+       // runEjemplosObjetos() ;
+        //runComparators();
 
 
-        runComparatorsObj();
-        runComparatorsObj2();
+        //runComparatorsObj();
+        //runComparatorsObj2();
+
+        Comparators comparators = new Comparators();
 
     }
     
@@ -142,7 +144,7 @@ public class App {
         for (int i = 0; i < estudiantes.length; i++)
             System.out.print(estudiantes[i] + " - ");
         System.out.println();
-        
+
 
     }
 }
