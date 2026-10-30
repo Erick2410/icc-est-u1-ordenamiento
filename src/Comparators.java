@@ -182,15 +182,24 @@ public class Comparators {
     }
     //Actividad
     public void ejemplo11() {
-        System.out.println("EJEMPLO 11");
-        List<Estudiante> lista = new ArrayList<>(estList);
-        Comparator<Estudiante> comparator = Comparator
-        .<Estudiante>comparingDouble(e -> e.getNota())
-        .thenComparing(Estudiante::getName)
-        .reversed();
-        lista.sort(comparator);
-        print(lista);
-    }
+    System.out.println("EJEMPLO 11");
+    List<Estudiante> lista = new ArrayList<>(estList);
+    Comparator<Estudiante> comparator = Comparator
+        .<Estudiante>comparingDouble(e -> {
+            double notaOriginal = e.getNota();
+            double notaFinal = notaOriginal;
+            if (notaOriginal < 10) {
+                notaFinal = notaOriginal + 2;
+                if (notaFinal > 10) {
+                    notaFinal = 10;
+                }
+            }
+            return notaFinal;
+        })
+        .thenComparing((e1, e2) -> e2.getName().compareTo(e1.getName()));
+    lista.sort(comparator);
+    print(lista);
+}
 
 
 }
